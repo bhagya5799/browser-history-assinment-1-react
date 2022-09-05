@@ -1,0 +1,51 @@
+.browser-container {
+  width: 100%;
+  background-color: whitesmoke;
+  height: 100vh;
+}
+
+.input-history-container {
+  height: 2.8rem;
+  width: 100%;
+  background-color: #3367d6;
+  padding-left: 1rem;
+  position: relative;
+  margin: 0;
+}
+.bowser-logo {
+  height: 1.5rem;
+  width: 4rem;
+  position: absolute;
+  transform: translateY(-50);
+  top: 30%;
+  margin-left: 2rem;
+}
+.input-Container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  transform: translateY(-50);
+  top: 22%;
+  padding-left: 40%;
+  margin-bottom: 2rem;
+}
+.input-Container > img {
+  border: 1px solid #6697ff;
+}
+input {
+  background-color: #3367d6;
+  border-width: 0;
+  border: 1px solid #6697ff;
+  border-color: none;
+  width: 20rem;
+  height: 1.8rem;
+  padding-left: 1rem;
+}
+
+input:focus {
+  outline: none;
+}
+.browser-history-container {
+  background-color: #ffffff;
+}

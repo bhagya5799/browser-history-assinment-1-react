@@ -1,0 +1,42 @@
+.container-history{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 2rem;
+}
+.container-history>div >p{
+    font-size: 0.8rem;
+    color: #475569;
+}
+.container-history>div>img{
+    height: 0.9rem;
+    width: 0.9rem;
+}
+.midsection{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+.container-history>div > h3{
+   font-size: 1rem;
+   text-align: center;
+   font-size: 0.8rem;
+}
+
+.container-history >button{
+  margin-left: auto;
+  margin-right: 2rem;
+  border: none;
+  background: none;
+}
+
+.title{
+    color: #475569;
+    font-weight: bold;
+}
+.delete-logo{
+       
+}
