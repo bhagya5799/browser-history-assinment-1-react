@@ -6,12 +6,19 @@ import BrowserHistoryItem from '../browserHistoryItem/index'
 
 class BrowserHistory extends Component {
   state = {
-    seacrhInput: '',
+    seacrhInput: initialHistoryList,
   }
 
-  onChangeSearchInput = event => {
+  updateFinalValue = id => {
     const {seacrhInput} = this.state
-    this.setState({seacrhInput: event.target.value})
+    const newbrowserList = seacrhInput.filter(eachItem => eachItem.id !== id)
+    console.log('kk')
+    this.setState({seacrhInput: newbrowserList})
+  }
+
+  onChangeSearchInput = Event => {
+    const {seacrhInput} = this.state
+    this.setState({seacrhInput: Event.target.value.toLowerCase()})
     console.log(seacrhInput)
   }
 
@@ -19,7 +26,7 @@ class BrowserHistory extends Component {
     const {seacrhInput} = this.state
     const {initialHistoryList} = this.props
     const searcResults = initialHistoryList.filter(eachItem =>
-      eachItem.title.toLowerCase().includes(seacrhInput.toLowerCase()),
+      eachItem.title.toLowerCase().includes(seacrhInput),
     )
     return (
       <div className="browser-container">
@@ -42,8 +49,12 @@ class BrowserHistory extends Component {
           </div>
         </div>
         <ul className="browser-history-container">
-          {initialHistoryList.map(eachItem => (
-            <BrowserHistoryItem historyDetails={eachItem} key={eachItem.id} />
+          {searcResults.map(eachItem => (
+            <BrowserHistoryItem
+              historyDetails={eachItem}
+              key={eachItem.id}
+              updateFinalValue={this.updateFinalValue}
+            />
           ))}
         </ul>
       </div>

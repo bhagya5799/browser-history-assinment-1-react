@@ -1,8 +1,11 @@
 import './index.css'
 
 const BrowserHistoryItem = props => {
-  const {historyDetails} = props
-  const {timeAccessed, logoUrl, title, domainUrl} = historyDetails
+  const {historyDetails, updateFinalValue} = props
+  const {timeAccessed, logoUrl, title, domainUrl, id} = historyDetails
+  const onclickDelete = () => {
+    updateFinalValue(id)
+  }
 
   return (
     <li className="container-history">
@@ -12,7 +15,7 @@ const BrowserHistoryItem = props => {
         <p className="title">{title}</p>
         <p className="domainUrl">{domainUrl}</p>
       </div>
-      <button id="delete">
+      <button id="delete" onClick={onclickDelete}>
         <img
           src="https://assets.ccbp.in/frontend/react-js/delete-img.png"
           className="delete-logo"
